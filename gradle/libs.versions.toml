@@ -1,5 +1,6 @@
 [versions]
-agp = "8.2.0-alpha15"
+agp = "8.1.1"
+#noinspection GradleDependency
 kotlin = "1.8.10"
 core-ktx = "1.10.1"
 junit = "4.13.2"
@@ -7,7 +8,27 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.2"
-compose-bom = "2023.03.00"
+compose-bom = "2023.08.00"
+androidLibrary = "8.1.1"
+ioRealmVersion = "1.10.0"
+hilt = "2.47"
+googleServicesVersion = "4.3.15"
+ksp = "1.8.10-1.0.9"
+kapt = "1.8.10"
+androidxNavigation = "2.7.1"
+firebaseBom = "32.2.3"
+room = "2.5.2"
+androidxCoreSplashscreen = "1.0.1"
+kotlinxCoroutinesCoreVersion = "1.7.1"
+coilVersion = "2.3.0"
+accompanistVersion = "0.27.0"
+maxkeppelerVersion = "1.0.2"
+messageBarComposeVersion = "1.0.5"
+oneTapComposeVersion = "1.0.3"
+desugarJdkVersion = "2.0.3"
+timberVersion = "5.0.1"
+ktlint = "11.5.1"
+
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -25,7 +46,47 @@ ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 
-[plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-storage= { group = "com.google.firebase", name = "firebase-storage-ktx" }
+
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxCoreSplashscreen" }
+
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCoreVersion"}
+io-realm-library-sync = { group = "io.realm.kotlin", name = "library-sync", version.ref = "ioRealmVersion"}
+
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
+
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanistVersion" }
+
+sheets-compose-dialogs-core = { group = "com.maxkeppeler.sheets-compose-dialogs", name = "core", version.ref = "maxkeppelerVersion"}
+sheets-compose-dialogs-calendar = { group = "com.maxkeppeler.sheets-compose-dialogs", name = "calendar", version.ref = "maxkeppelerVersion" }
+sheets-compose-dialogs-clock = { group = "com.maxkeppeler.sheets-compose-dialogs", name = "clock", version.ref = "maxkeppelerVersion" }
+
+messagebar-compose = { group = "com.github.stevdza-san", name = "MessageBarCompose", version.ref = "messageBarComposeVersion" }
+one-tap-compose = { group = "com.github.stevdza-san", name = "OneTapCompose", version.ref = "oneTapComposeVersion" }
+desugar-jdk = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkVersion" }
+
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timberVersion"}
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "androidLibrary" }
+io-realm = { id = "io.realm.kotlin", version.ref = "ioRealmVersion" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+gms = { id = "com.google.gms.google-services", version.ref = "googleServicesVersion" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint"}
